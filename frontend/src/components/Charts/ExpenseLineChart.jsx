@@ -11,12 +11,12 @@ import {
 } from "recharts";
 
 function fmtAxis(value) {
-  if (value >= 1000) return `$${(Math.round(value / 100) / 10).toFixed(1)}k`;
-  return `$${value}`;
+  if (value >= 1000) return `₹${(Math.round(value / 100) / 10).toFixed(1)}k`;
+  return `₹${value}`;
 }
 
 function fmtFull(value) {
-  return "$" + new Intl.NumberFormat("en-US").format(Math.round(Number(value)));
+  return "₹" + new Intl.NumberFormat("en-IN").format(Math.round(Number(value)));
 }
 
 const ExpenseLineChartTooltip = ({ active, payload }) => {

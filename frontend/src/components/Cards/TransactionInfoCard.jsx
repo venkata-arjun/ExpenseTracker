@@ -29,7 +29,7 @@ const TransactionInfoCard = ({
 
   const normalizedAmount = Number(amount);
   const formattedAmount = Number.isFinite(normalizedAmount)
-    ? new Intl.NumberFormat("en-US").format(normalizedAmount)
+    ? new Intl.NumberFormat("en-IN").format(normalizedAmount)
     : amount;
 
   return (
@@ -68,10 +68,10 @@ const TransactionInfoCard = ({
 
         <div
           className={`flex min-w-27 items-center justify-center gap-1.5 rounded-lg px-2.5 py-1.5 sm:min-w-30 sm:gap-2 sm:px-3 ${getAmountStyles()}`}
-          title={`${isIncome ? "+" : "-"} $${formattedAmount}`}
+          title={`${isIncome ? "+" : "-"} ₹${formattedAmount}`}
         >
           <h6 className="truncate text-[11px] font-medium tabular-nums sm:text-sm">
-            {isIncome ? "+" : "-"} ${formattedAmount}
+            {isIncome ? "+" : "-"} ₹{formattedAmount}
           </h6>
           {isIncome ? <LuTrendingUp size={14} /> : <LuTrendingDown size={14} />}
         </div>

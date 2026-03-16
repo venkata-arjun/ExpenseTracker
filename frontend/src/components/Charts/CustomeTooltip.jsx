@@ -10,7 +10,7 @@ const CustomTooltip = ({ active, payload }) => {
         <p className="text-sm text-gray-600">
           Amount:{" "}
           <span className="text-sm font-medium text-gray-900">
-            ${payload[0].value}
+            ₹{new Intl.NumberFormat("en-IN").format(Number(payload[0].value || 0))}
           </span>
         </p>
       </div>

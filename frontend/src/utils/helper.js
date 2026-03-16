@@ -19,15 +19,12 @@ export const getInitials = (name) => {
 };
 
 export const addThousandsSeparator = (num) => {
-  if (num == null || isNaN(num)) return "";
+  const amount = Number(num);
+  if (!Number.isFinite(amount)) return "";
 
-  const [integerPart, fractionalPart] = num.toString().split(".");
-
-  const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-  return fractionalPart
-    ? `${formattedInteger}.${fractionalPart}`
-    : formattedInteger;
+  return new Intl.NumberFormat("en-IN", {
+    maximumFractionDigits: 2,
+  }).format(amount);
 };
 
 export const prepareExpenseBarChartData = (data = []) => {

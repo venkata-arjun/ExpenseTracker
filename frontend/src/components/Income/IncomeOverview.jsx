@@ -5,7 +5,7 @@ import { prepareIncomeBarChartData } from "../../utils/helper";
 
 const formatCurrency = (value) => {
   const amount = Number(value || 0);
-  return `$${new Intl.NumberFormat("en-US").format(Math.round(amount))}`;
+  return `₹${new Intl.NumberFormat("en-IN").format(Math.round(amount))}`;
 };
 
 const StatCard = ({ label, value, accent }) => (
