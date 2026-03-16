@@ -31,6 +31,6 @@ backend/*.xlsx
 backend/.env
 
 # Frontend
-frontend/expense-tracker/node_modules/
-frontend/expense-tracker/dist/
-frontend/expense-tracker/.env
+frontend/node_modules/
+frontend/dist/
+frontend/.env
