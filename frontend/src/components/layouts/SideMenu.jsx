@@ -10,6 +10,7 @@ import { API_PATHS } from "../../utils/apiPaths";
 import uploadImage from "../../utils/uploadImage";
 import Modal from "../Modal";
 import toast from "react-hot-toast";
+import { resolveMediaUrl } from "../../utils/mediaUrl";
 
 const SideMenu = ({ activeMenu }) => {
   const { user, clearUser, updateUser } = useContext(UserContext);
@@ -21,6 +22,7 @@ const SideMenu = ({ activeMenu }) => {
   const [selectedPhotoFile, setSelectedPhotoFile] = React.useState(null);
   const [previewPhotoUrl, setPreviewPhotoUrl] = React.useState("");
   const [markPhotoForDelete, setMarkPhotoForDelete] = React.useState(false);
+  const profilePhotoSrc = resolveMediaUrl(user?.profileImageUrl || "");
 
   const handleClick = (route) => {
     if (route === "logout") {
@@ -44,7 +46,7 @@ const SideMenu = ({ activeMenu }) => {
 
     setSelectedPhotoFile(null);
     setMarkPhotoForDelete(false);
-    setPreviewPhotoUrl(user?.profileImageUrl || "");
+    setPreviewPhotoUrl(resolveMediaUrl(user?.profileImageUrl || ""));
   }, [user?.profileImageUrl]);
 
   const handleOpenPhotoEditor = () => {
@@ -173,7 +175,7 @@ const SideMenu = ({ activeMenu }) => {
         >
           {user?.profileImageUrl ? (
             <img
-              src={user?.profileImageUrl || ""}
+              src={profilePhotoSrc}
               alt="Profile Image"
               className="w-20 h-20 bg-slate-400 rounded-full object-cover ring-4 ring-slate-100 transition group-hover:brightness-95"
             />
