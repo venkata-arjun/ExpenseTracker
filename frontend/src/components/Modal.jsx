@@ -24,12 +24,12 @@ const Modal = ({ children, isOpen, onClose, title }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/45 p-4 backdrop-blur-[2px]"
+      className="fixed top-0 left-0 z-50 grid h-screen w-screen place-items-center overflow-y-auto bg-slate-900/45 p-4 backdrop-blur-[2px]"
       onClick={onClose}
       role="presentation"
     >
       <div
-        className="relative w-full max-w-2xl rounded-2xl border border-slate-200 bg-white shadow-2xl"
+        className="relative my-auto w-full max-w-2xl rounded-2xl border border-slate-200 bg-white shadow-2xl"
         onClick={(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"

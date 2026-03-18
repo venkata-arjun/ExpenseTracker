@@ -5,6 +5,8 @@ const {
   registerUser,
   loginUser,
   getUserInfo,
+  updateProfilePhoto,
+  deleteProfilePhoto,
 } = require("../controllers/authController");
 
 const upload = require("../middleware/uploadMiddleware");
@@ -16,6 +18,10 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 
 router.get("/getUser", protect, getUserInfo);
+
+router.put("/profile-image", protect, updateProfilePhoto);
+
+router.delete("/profile-image", protect, deleteProfilePhoto);
 
 router.post("/upload-image", upload.single("image"), (req, res) => {
   if (!req.file) {
