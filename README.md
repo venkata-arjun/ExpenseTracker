@@ -1,4 +1,4 @@
-# ExpenseTracker
+# FinanceTracker
 
 A full-stack personal finance application to track income and expenses, analyze spending trends, and visualize financial health with interactive charts.
 
@@ -22,7 +22,7 @@ A full-stack personal finance application to track income and expenses, analyze 
 
 ## Overview
 
-ExpenseTracker is a MERN-style application with a React + Vite frontend and an Express + MongoDB backend.
+FinanceTracker is a MERN-style application with a React + Vite frontend and an Express + MongoDB backend.
 
 It includes:
 
@@ -98,7 +98,7 @@ Currency display in the frontend is configured for Indian Rupees (INR).
 ## Project Structure
 
 ```text
-ExpenseTracker/
+FinanceTracker/
   backend/
     config/
     controllers/
@@ -145,8 +145,8 @@ ExpenseTracker/
 ### 1) Clone the repository
 
 ```bash
-git clone https://github.com/venkata-arjun/ExpenseTracker.git
-cd ExpenseTracker
+git clone https://github.com/venkata-arjun/FinanceTracker.git
+cd FinanceTracker
 ```
 
 ### 2) Install dependencies
